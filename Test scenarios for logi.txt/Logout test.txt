@@ -7,7 +7,7 @@ Preconditions:
 
 Test Steps:
   1. Open the login page https://agnekal.github.io/bookreservation/
-  2. Enter a valid username (vitalis gudinis).
+  2. Enter a valid username (vitalijus).
   3. Click 'Prisijungti' button.
   4. Click 'Atsijungti' button after redirected to home page .
 

@@ -1,0 +1,23 @@
+Test Case Description:
+  - Verify successful user registration.
+
+Preconditions:
+  - Anyone can registre with a unique user name (no more than 20 characters)
+   and a unique valid email (no more than 48 characters).
+  - Password must consist of letters(at least one lowercase and at least one uppercase)
+   and numbers. Special symbols can be used in any optional.
+
+Test Steps:
+  1. Open the login page https://agnekal.github.io/bookreservation/
+  2. Enter user name.
+  3. Enter a valid email.
+  4. Enter password.
+  5. Click 'Registruotis' button. 
+
+Expected Results:
+  - The user is redirected to the home page.
+  - A welcome message is displayed.
+
+Pass Criteria:
+  - The user is redirected to home page.
+  - Welcome message 'Sveiki, (e.g. vitalis)!' is displayed.            
