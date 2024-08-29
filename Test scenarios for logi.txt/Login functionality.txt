@@ -1,14 +1,14 @@
 Test Case Description:
-  - Verify successful user authentication
+  - Verify successful user authentication.
 
 Preconditions:
-  - The user account exist, and the password is correct
+  - The user account exist, and the password is correct.
 
 Test steps:
-  a. Open the login page.
-  b. Enter a valid user name (vitalis gudinis).
-  c. Enter a valid password .
-  d. Click 'Prisijungti' button.
+  1. Open the login page https://agnekal.github.io/bookreservation/
+  2. Enter a valid user name (vitalis gudinis).
+  3. Enter a valid password .
+  4. Click 'Prisijungti' button.
 
 Expected Results:
   - The user is redirected to the home page.

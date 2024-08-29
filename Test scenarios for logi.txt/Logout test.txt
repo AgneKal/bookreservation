@@ -1,0 +1,18 @@
+Test Case Description:
+  - Process a successful logout.
+
+Preconditions:
+  - The user account exists.
+  - Password is correct. 
+
+Test Steps:
+  1. Open the login page https://agnekal.github.io/bookreservation/
+  2. Enter a valid username (vitalis gudinis).
+  3. Click 'Prisijungti' button.
+  4. Click 'Atsijungti' button after redirected to home page .
+
+Expected Results:
+  - The user is redirected to login page.
+
+Pass/Fail Criteria:
+  - The user is redirected to login page.    
