@@ -9,9 +9,9 @@ Preconditions:
 
 Test Steps:
   1. Open the login page https://agnekal.github.io/bookreservation/
-  2. Enter user name.
-  3. Enter a valid email.
-  4. Enter password.
+  2. Create user name. (vitalijus)
+  3. Create a valid email.(vitalijus@test.com)
+  4. Create password. (Yes22)
   5. Click 'Registruotis' button. 
 
 Expected Results:
@@ -20,4 +20,4 @@ Expected Results:
 
 Pass Criteria:
   - The user is redirected to home page.
-  - Welcome message 'Sveiki, (e.g. vitalis)!' is displayed.            
+  - Welcome message 'Sveiki, vitalijus!' is displayed.            

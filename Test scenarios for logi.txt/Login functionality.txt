@@ -7,7 +7,7 @@ Preconditions:
 Test steps:
   1. Open the login page https://agnekal.github.io/bookreservation/
   2. Enter a valid user name (vitalijus).
-  3. Enter a valid password .
+  3. Enter a valid password .(Yes22)
   4. Click 'Prisijungti' button.
 
 Expected Results:
@@ -16,7 +16,7 @@ Expected Results:
 
 Pass Criteria:
   - The user is redirected to home page.
-  - Welcome message 'Sveiki, vitalis gudinis!' is displayed.
+  - Welcome message 'Sveiki, vitalijus!' is displayed.
 
 Fail Criteria:
   - Message 'Neteisingas vartotojo vardas arba slaptazodis!' is displayed.       
