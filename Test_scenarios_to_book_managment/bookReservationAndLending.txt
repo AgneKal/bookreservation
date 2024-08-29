@@ -1,0 +1,53 @@
+PRECONDITION:
+    1. Create user A:
+        - Username: John; Email: john@test.lt; password: John1;
+        - Books: Mes dedame tašką, Colleen Hoover, 2022; Mes pradedame iš naujo, Hoover Colleen, 2023.
+    2. Create user B:
+        - Username: Sarah; Email: sarah@test.lt; password: Sarah1;
+        - Books: Džovanio kambarys, James Baldwin, 1986; Paskutinis žaliuojantis slėnis, Mark Sullivan, 1999.
+    3. Create user C:
+        - Username: Tony; Email: tony@test.lt; password: Tony1;
+        - Books: Grybo sapnas, Gabija Grušaitė, 2005; Prie ežero, Ana Huang, 2013.
+    4. User successfully login.
+
+
+BOOK RESERVATION AND LENDING (USER A)
+
+    Functional Requirements:
+        Reserve Book: A registered user can reserve another user's book by clicking the "Rezervuoti" button, which changes the book's status to "Nori rezervuoti".
+        Lend Book: The owner of a reserved book can change the status to "Paskolinta" after confirming the reservation.
+        Return Book: When a book is borrowed, the owner can change its status back to "Laisva" when the book is returned.
+
+
+        1. Reserve a Book (USER A)
+            1.1. Ensure that a registered user can reserve a book added by another user.
+                Steps:
+                    Find a book added by another user (USER B BOOK).
+                    Click the "Rezervuoti" button.
+                Expected Result: 
+                    The book's status changes to "Nori rezervuoti".
+                PASS/FAIL: PASS
+            
+            1.2. Mark a Book as Borrowed (USER B and USER C)
+                Steps:
+                    Login with USER C.
+                    Make sure that the user does not have the "Paskolinti" button.
+                    Login with USER B.
+                    Locate the reserved book with the status "Nori rezervuoti".
+                    Click the "Paskolinti" button.
+                Expected Result: 
+                    Only the owner of the book can click the "Paskolinti" button.
+                    The book's status changes to "Paskolinta".
+                PASS/FAIL: PASS
+
+            1.3. Mark a Book as Returned (USER A, USER B and USER C)
+                Steps:
+                    Login with USER B.
+                    Make sure that the user does not have the "Grąžinta (laisva)" button.
+                    Login with USER C.
+                    Make sure that the user does not have the "Grąžinta (laisva)" button.
+                    Login with USER A.
+                    Locate the borrowed book with the status "Paskolinta".
+                    Click the "Grąžinta (laisva)" button.
+                Expected Result: 
+                    The book's status changes back to "Laisva".
