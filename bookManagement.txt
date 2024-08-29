@@ -1,0 +1,155 @@
+PRECONDITION:
+    1. Create user A - Username: John; Email: john@test.lt; password: John1;
+    2. Create user B - Username: Sarah; Email: sarah@test.lt; password: Sarah1;
+    3. Create user C - Username: Tony; Email: tony@test.lt; password: Tony1;
+    4. User successfully login.
+
+
+BOOK MANAGMENT
+
+1. ADD BOOK (USER A)
+
+    Functional Requirements:
+        Add Book: A user can add their own book by entering the author, title, and year. The default status of a newly added book is "Laisva".
+
+        1.1. Valid Book Addition
+            1.1.1. Add a book with valid data.
+                Steps:
+                    Successfully login.
+                    Enter a valid title (e.g., "Mes dedame tašką!"), author (e.g., "Colleen Hoover"), and year (e.g., "2022").
+                    Submit the form.
+                Expected Result: 
+                    The book is added to the database with the status "Available".
+                PASS/FAIL: PASS
+
+        1.2. Invalid Year Input
+            1.2.1. Enter a negative number for the year.
+                Steps:
+                    Enter a valid title (e.g., "Mes pradedame iš naujo") and author (e.g., "Hoover Colleen"), but input a negative number for year (e.g., "-2020").
+                    Submit the form.
+                Expected Result: 
+                    The system displays an error message indicating that the year must be greater than oe equal 1000.
+                PASS/FAIL: PASS
+
+            1.2.2. Enter a year with letters or symbols.
+                Steps:
+                    Enter a valid title (e.g., "Veritė") and author (e.g., "Colleen Hoover"), but input a non-numeric year (e.g., "20 pr. Kr.").
+                    Submit the form.
+                Expected Result: 
+                    The system displays an error message indicating that the year must be greater than oe equal 1000.
+                PASS/FAIL: PASS
+            
+            1.2.3. Leave the year field empty.
+                Steps:
+                    Enter a valid title (e.g., "Veritė") and author (e.g., "Colleen Hoover"), but leave the year field empty.
+                    Submit the form.
+                Expected Result: 
+                    The system displays an error message indicating that the year field is required.
+                PASS/FAIL: PASS
+
+        1.3. Invalid Title Input
+            1.3.1. Enter a very long title.
+                Steps:
+                    Enter a very long string in the title field (Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi explicabo sunt debitis error, quisquam ab, nostrum obcaecati nam saepe quae nobis deserunt harum fugit, veritatis ullam iusto velit soluta exercitationem! Expedita alias nulla soluta nisi quas mollitia quia, ut qui nostrum necessitatibus magnam a officiis.).
+                    Enter a valid author and year.
+                    Submit the form.
+                Expected Result: 
+                    The system either truncates the title or displays an error message if there is a character limit.
+                PASS/FAIL: FAIL (allow very long title (319 symbols)).
+
+        1.4. Invalid Author Input
+            1.4.1. Enter symbols in the author field.
+                Steps:
+                    Enter symbols or special characters in the author field (e.g., "@@@").
+                    Enter a valid title and year.
+                    Submit the form.
+                Expected Result: 
+                    The system displays an error message indicating that the author name must not contain symbols.
+                PASS/FAIL: FAIL (allow enter symbols (€) and special characters(@)).
+
+            1.4.2. Enter a very long author name.
+                Steps:
+                    Enter a very long string in the author field (Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi explicabo sunt debitis error, quisquam ab, nostrum obcaecati nam saepe quae nobis deserunt harum fugit, veritatis ullam iusto velit soluta exercitationem! Expedita alias nulla soluta nisi quas mollitia quia, ut qui nostrum necessitatibus magnam a officiis.).
+                    Enter a valid title and year.
+                    Submit the form.
+                Expected Result: 
+                    The system either truncates the author name or displays an error message if there is a character limit.
+                PASS/FAIL: FAIL (allow very long author name (319 symbols)).
+        
+        1.5. Field Constraints and Validations
+            1.5.1. Enter additional unexpected characters or formats (e.g., HTML tags).
+                Steps:
+                    Enter HTML tags or other unexpected input formats in the author, title, or year fields (<script>alert('test')</script>).
+                    Submit the form.
+                Expected Result: The system should sanitize inputs and not accept potentially harmful or invalid data.
+                PASS/FAIL: FAIL (allow '<script>alert('test')</script>' add HTML tag's).
+    
+
+---------------------------------------------------------------
+2. EDIT BOOK (USER A)
+
+    ADDITIONAL PRECONDITION:
+        User A, added book: Title "Mes dedame tašką", Author "Colleen Hoover" Years "2022";
+        User B, added book: Title "Mes pradedame iš naujo ", Author "Hoover Colleen" Years "2023";
+
+    Functional Requirements:
+        Edit Book: A user can edit only their own book information (author, title, year).
+
+        2.1. Edit Book 
+            2.1.1. Ensure a user can edit the details of their own book.
+                Steps:
+                    Select a book to edit (button "Redaguoti").
+                    Modify the author, title, and/or year.
+                    Submit the changes.
+                Expected Result: 
+                    The changes are saved and displayed correctly on the books list.
+                PASS/FAIL: PASS
+
+            2.1.2. Verify that a user cannot edit another user's book.
+                Steps:
+                    Attempt to edit a book that was added by another user.
+                Expected Result: 
+                    The edit options are not available for books added by other users.
+                PASS/FAIL: PASS
+
+            2.1.3. Ensure validation for invalid input during editing.
+                Steps:
+                    Select a book to edit (button "Redaguoti").
+                    Enter invalid data for author, title, or year or leave empty field (e.g., symbols in the year field).
+                    Attempt to submit the changes.
+                Expected Result: 
+                    The system does not change the description if invalid data is entered
+                PASS/FAIL: PASS
+
+---------------------------------------------------------------
+3. VIEW BOOK (USER A)
+
+    ADDITIONAL PRECONDITION:
+        User A, added book: Title "Mes dedame tašką", Author "Colleen Hoover" Years "2022";
+        User B, added book: Title "Mes pradedame iš naujo ", Author "Hoover Colleen" Years "2023";
+    
+    Functional Requirements:
+        A user can view all books, including their authors, titles, years, and current statuses.
+
+        3.1. View All Books
+            3.1.1. Ensure a user can view a list of all books with correct details.
+                Steps:
+                    Verify that the list includes the author, title, year, and status for each book.
+                Expected Result: 
+                    All books are displayed with correct details and statuses.
+                PASS/FAIL: PASS
+            
+            3.1.2. Verify that the books added by different users are visible to all users.
+                Steps:
+                    Check that books added by other users are visible and correctly displayed.
+                Expected Result: 
+                    Books added by different users are visible, with correct information for each.
+                PASS/FAIL: PASS
+            3.1.3. Ensure that the list updates correctly when new books are added.
+                Steps:
+                    Add a new book from another session.
+                Expected Result: 
+                    The newly added book appears in the list with the correct details.
+
+
+Suggestion: create a book deletion functionality.
