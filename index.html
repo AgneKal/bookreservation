@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knygų Registravimo Programėlė</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Knygų Registravimo Programėlė</h1>
+
+        <!-- Autentifikacijos sekcija -->
+        <div id="auth-section">
+            <h2 id="auth-header">Registracija</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Vartotojo vardas" required maxlength="20">
+                <input type="email" id="email" placeholder="El. paštas" required maxlength="48">
+                <input type="password" id="password" placeholder="Slaptažodis" required>
+                <button type="submit" id="auth-button">Registruotis</button>
+                <button type="button" id="toggle-login">Prisijungti</button>
+            </form>
+        </div>
+
+        <!-- Prisijungimo sekcija -->
+        <div id="login-section" style="display:none;">
+            <h2 id="login-header">Prisijungti</h2>
+            <form id="login-form">
+                <input type="text" id="login-username" placeholder="Vartotojo vardas" required>
+                <input type="password" id="login-password" placeholder="Slaptažodis" required>
+                <button type="submit">Prisijungti</button>
+                <button type="button" id="toggle-register">Registruotis</button>
+            </form>
+        </div>
+
+        <!-- Sveikinimo sekcija -->
+        <div id="welcome-section" style="display:none;">
+            <h2 id="welcome-message"></h2>
+            <button id="logout-button" style="display:none;">Atsijungti</button>
+            <form id="book-form">
+                <input type="text" id="book-title" placeholder="Knygos pavadinimas" required>
+                <input type="text" id="book-author" placeholder="Autorius" required>
+                <input type="number" id="book-year" placeholder="Išleidimo metai" required min="1000" max="9999">
+                <button type="submit">Pridėti knygą</button>
+            </form>
+            <div id="books-list"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
