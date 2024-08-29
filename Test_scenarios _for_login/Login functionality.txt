@@ -27,7 +27,7 @@ Test Steps(invalid user name):
 Expected Results:
   - Message 'Neteisingas vartotojo vardas arba slaptazodis!'  
 
-Pass/Fail: Fail  
+Pass/Fail: Pass  
 
 Test Steps(invalid password):
   1. Open the login page https://agnekal.github.io/bookreservation/
@@ -38,4 +38,4 @@ Test Steps(invalid password):
 Expected Result:
   - Message 'Neteisingas vartotojo vardas arba slaptazodis!'
 
-Pass/Fail: Fail     
+Pass/Fail: Pass     
