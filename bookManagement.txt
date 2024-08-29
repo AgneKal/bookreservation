@@ -19,7 +19,7 @@ BOOK MANAGMENT
                     Enter a valid title (e.g., "Mes dedame tašką!"), author (e.g., "Colleen Hoover"), and year (e.g., "2022").
                     Submit the form.
                 Expected Result: 
-                    The book is added to the database with the status "Available".
+                    The book is added to the database with the status "Available". Inputs empty (only placeholders).
                 PASS/FAIL: PASS
 
         1.2. Invalid Year Input
@@ -129,7 +129,7 @@ BOOK MANAGMENT
         User B, added book: Title "Mes pradedame iš naujo ", Author "Hoover Colleen" Years "2023";
     
     Functional Requirements:
-        A user can view all books, including their authors, titles, years, and current statuses.
+        View Book: A user can view all books, including their authors, titles, years, and current statuses.
 
         3.1. View All Books
             3.1.1. Ensure a user can view a list of all books with correct details.
